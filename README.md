@@ -1,36 +1,39 @@
+##Week 1
 
-## Rag Application
+1.	Familiarized myself with the project requirements and objectives.
+2.	Set up the development environment, including installing necessary tools and libraries (Python, Chainlit, LLM models, etc.).
+3.	Reviewed the basics of Large Language Models (LLMs) and how they are applied in chatbots.
+4.	Conducted initial research on Retrieval-Augmented Generation (RAG) and its integration with LLMs.
+5.	Explored different methods for handling and processing PDFs to extract relevant data.
 
-This is a Chainlit-based application that allows users to ask questions about child's story books and receive detailed, child-safe answers. The application uses the LangChain library to interact with the OpenAI API and retrieve relevant information from a set of PDF documents.
-## Components
+##Week 2
 
-1. API Key Handling: The code starts by loading the OpenAI API key from an environment variable using the dotenv library.
+1.	Developed a basic chatbot framework using Chainlit.
+2.	Implemented an interface for uploading PDFs and extracting text content.
+3.	Integrated a pre-trained LLM for basic query processing.
+4.	Tested the initial setup with simple queries and responses.
+5.	Documented the initial development process and key learnings.
 
-2. OpenAI Embedding Model: An OpenAI Embedding model is created using the OpenAIEmbeddings class from the langchain_openai library.
+##Week 3
 
-3. PDF Document Loading: The main() function is annotated with @cl.on_chat_start, which means it will be executed when the Chainlit application starts. This function loads PDF documents from a folder named "pdfs/" and stores the text content in a list.
+1.	Improved the PDF text extraction process to handle different formats and structures.
+2.	Successfully integrated RAG to enhance response accuracy and relevance.
+3.	Redesigned the user interface to provide a better user experience.
+4.	Added basic error handling for PDF uploads and processing.
+5.	Conducted a mid-project review and made adjustments based on feedback.
 
-4. Text Splitting: The text content of the PDF documents is split into smaller chunks using the CharacterTextSplitter class from the langchain.text_splitter module. This is done to improve the performance of the search and retrieval process.
+##Week 4
 
-5. FAISS Vector Store: The chunked text is used to create a FAISS vector store using the FAISS.from_documents() function from the langchain_community.vectorstores module. This vector store will be used to perform similarity searches on the user's queries.
+1.	Implemented multi-turn conversation capabilities and context retention in the chatbot.
+2.	Enhanced the chatbot’s ability to handle complex queries and provide detailed responses.
+3.	Optimized the chatbot’s performance and scalability.
+4.	Conducted thorough testing and debugging to identify and fix issues.
+5.	 Gathered user feedback and made improvements based on the input received.
 
-6. Chat Model: A ChatOpenAI model is created using the langchain_openai library. The temperature of the model is adjusted to 0.3 to generate more accurate responses. Lower temperatures can be used for less creative responses.
+##Week 5
 
-7. LLM Chain: An LLMChain is created using the PromptTemplate class from the langchain_core.prompts module and the ConversationBufferMemory class from the langchain.memory module. This chain combines the chat model, a custom prompt template, and conversation memory to generate the final response.
-
-- The PromptTemplate defines the initial prompt, which includes placeholders for the relevant document content, the chat history, and the user's input.
-- The ConversationBufferMemory is used to maintain the conversation context, allowing the language model to provide responses that are coherent and relevant to the previous prompts and answers.
-
-8. Retrieval QA Function: The get_response_from_query() function takes a user's query, the FAISS vector store, and the LLM chain, and returns the generated response and the relevant documents.
-
-9. Chainlit App: The app() function is annotated with @cl.on_message, which means it will be executed whenever a user sends a message to the Chainlit application. This function retrieves the necessary components from the user session and calls the get_response_from_query() function to generate the response, which is then sent back to the user.
-## Approach
-
-The main approach used in this application is to combine the power of LangChain and Chainlit to build a conversational AI assistant that can answer questions about child's story books. The key steps are:
-
-1. Load and process the PDF documents to create a searchable vector store.
-2. Define a custom prompt template that instructs the language model to provide detailed, child-safe answers based on the available information and the context of the conversation.
-3. Use the LLMChain with the ConversationBufferMemory to maintain the context of the conversation and generate responses that are coherent and relevant to the previous prompts and answers.
-4. Leverage the Chainlit framework to create a user-friendly chat interface and manage the application state across multiple users.
-
-The application is designed to be scalable and reusable, with the FAISS vector store, chat model, and LLM chain stored in the user session for efficient retrieval and response generation.
+1.	Finalized all remaining features and ensured they are fully functional.
+2.	Conducted extensive testing to ensure reliability and robustness.
+3.	Prepared comprehensive documentation for the project, including setup instructions, usage guides, and troubleshooting tips.
+4.	Created a presentation to demonstrate the chatbot’s capabilities and project outcomes.
+5.	Conducted the final project review and handover.
